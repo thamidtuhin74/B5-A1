@@ -45,7 +45,7 @@ type RequireUtility = Require<User>
 
 ```
 
-# 4 Use of enums in TypeScript
+# 4. Use of enums in TypeScript
 
 ### enum is the shorter form of enumeration, thatn help us to set of named constants — either numeric or string values.
 
