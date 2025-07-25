@@ -51,31 +51,41 @@
       private make: string;
       private year: number;
 
-      constructor(make: string, year: number){
+      constructor(make: string, year: number) {
         this.make = make;
-        this.year =  year
+        this.year = year;
       }
 
-      getInfo(){
-        console.log(`"Make: ${this.make}, Year: ${this.year}"`)
+      getInfo() {
+        console.log(`"Make: ${this.make}, Year: ${this.year}"`);
       }
     }
 
-    class Car extends Vehicle{
+    class Car extends Vehicle {
       private model: string;
-      constructor(make: string, year: number, model: string){
+      constructor(make: string, year: number, model: string) {
         super(make, year);
         this.model = model;
       }
-      getModel(){
-        console.log(`"Model: ${this.model}"`)
+      getModel() {
+        console.log(`"Model: ${this.model}"`);
       }
     }
 
     const mycar = new Car("Toyota", 2020, "Corolla");
     mycar.getInfo();
-    mycar.getModel()
+    mycar.getModel();
+  }
 
-
+  {
+    function processValue(value: string | number): number {
+      if (typeof value === "number") {
+        return value * 2;
+      } else {
+        return value.length;
+      }
+    }
+    console.log(processValue(5));
+    console.log(processValue("Tahmid Tuhin"));
   }
 }
