@@ -93,20 +93,35 @@
       name: string;
       price: number;
     }
+    // function getMostExpensiveProduct(products: Product[]): Product | null {
+    //   if (products.length === 0) {
+    //     return null;
+    //   } else {
+    //     let index: number = -1;
+    //     let maxPrice: number = 0;
+
+    //     products.map((product, i) => {
+    //       if (product.price > maxPrice) {
+    //         maxPrice = product.price;
+    //         index = i;
+    //       }
+    //     });
+    //     return products[index];
+    //   }
+    // }
+
     function getMostExpensiveProduct(products: Product[]): Product | null {
       if (products.length === 0) {
         return null;
       } else {
-        let index: number = -1;
-        let maxPrice: number = 0;
+        let maxPriceProduct: Product = products[0];
 
-        products.map((product, i) => {
-          if (product.price > maxPrice) {
-            maxPrice = product.price;
-            index = i;
+        products.map((product) => {
+          if (product.price >= maxPriceProduct?.price) {
+            maxPriceProduct = product;
           }
         });
-        return products[index];
+        return maxPriceProduct;
       }
     }
 
