@@ -88,4 +88,34 @@
     console.log(processValue(5));
     console.log(processValue("Tahmid Tuhin"));
   }
+  {
+    interface Product {
+      name: string;
+      price: number;
+    }
+    function getMostExpensiveProduct(products: Product[]): Product | null {
+      if (products.length === 0) {
+        return null;
+      } else {
+        let index: number = -1;
+        let maxPrice: number = 0;
+
+        products.map((product, i) => {
+          if (product.price > maxPrice) {
+            maxPrice = product.price;
+            index = i;
+          }
+        });
+        return products[index];
+      }
+    }
+
+    const products: Product[] = [
+      { name: "Pen", price: 10 },
+      { name: "Notebook", price: 25 },
+      { name: "Bag", price: 50 },
+    ];
+
+    console.log(getMostExpensiveProduct(products));
+  }
 }
